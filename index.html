@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaint Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header>
+    <h1>Complaint Management System</h1>
+    <nav>
+      <button id="nav-home">🏠 Home</button>
+      <button id="nav-submit">📝 Submit Complaint</button>
+      <button id="nav-mycomplaints">📋 My Complaints</button>
+      <button id="nav-admin">🔧 Admin</button>
+      <span id="user-welcome"></span>
+      <button id="logout-btn" class="hide">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hide"></div>
+
+  <!-- ============ AUTHENTICATION SECTION ============ -->
+  <section id="home-section">
+    <h2>Welcome to the Complaint Portal</h2>
+    <p class="meta">Register or Login to submit your complaints easily.</p>
+
+    <div id="auth-forms">
+      <div class="auth-box">
+        <h3>Register</h3>
+        <input type="text" id="reg-name" placeholder="Full Name" />
+        <input type="email" id="reg-email" placeholder="Email" />
+        <input type="password" id="reg-password" placeholder="Password" />
+        <button id="register-btn">Register</button>
+      </div>
+
+      <div class="auth-box">
+        <h3>Login</h3>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUBMIT COMPLAINT SECTION ============ -->
+  <section id="submit-section" class="hide">
+    <h2>Submit a Complaint</h2>
+    <form id="complaint-form">
+      <label>Title</label>
+      <input type="text" id="complaint-title" placeholder="Enter complaint title" required />
+
+      <label>Category</label>
+      <select id="complaint-category">
+        <option>General</option>
+        <option>Maintenance</option>
+        <option>Technical</option>
+        <option>Service</option>
+      </select>
+
+      <label>Description</label>
+      <textarea id="complaint-desc" rows="4" placeholder="Describe your complaint" required></textarea>
+
+      <label>Attachment (URL)</label>
+      <input type="url" id="complaint-attach" placeholder="Optional link or image URL" />
+
+      <button type="submit">Submit Complaint</button>
+    </form>
+  </section>
+
+  <!-- ============ MY COMPLAINTS SECTION ============ -->
+  <section id="mycomplaints-section" class="hide">
+    <h2>My Complaints</h2>
+    <div id="mycomplaints-list" class="list"></div>
+  </section>
+
+  <!-- ============ ADMIN SECTION ============ -->
+  <section id="admin-section" class="hide">
+    <h2>Admin Dashboard</h2>
+    <p class="meta">Only admin users can manage complaints.</p>
+    <div id="admin-list" class="list"></div>
+  </section>
+
+  <footer>
+    <p>©️ 2025 Complaint Management System | Built by Harsh Malik</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
